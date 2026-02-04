@@ -3,24 +3,57 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --nav: #FFFFFF;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-nav: var(--nav);
+  --color-text-black-200: #8A8A8A;
+  --color-text-black-500: #020202;
+  --color-Section-gray: #F5F5F5;
+  --font-poppins: var(--font-poppins);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@layer components{
+  header {
+    @apply flex sticky w-full h-[91px] items-center bg-nav;
+
+    nav {
+      @apply flex flex-row items-center w-full h-full px-[7.5rem];
+    }
+    p {
+      @apply text-text-black-200 text-[0.875rem];
+    }
+
+    .logo {
+      @apply flex flex-row items-center;
+    }
+    .nav-link {
+      @apply flex flex-row items-center gap-[0.25rem];
+    }
+    .nav-section2 {
+      @apply flex flex-row items-center;
+    }
+    ul {
+      @apply hidden md:flex flex flex-row items-center;
+    }
+  }
+}
+
+@layer base {
+  h2 {
+    @apply text-[2rem] font-semibold text-text-black-500;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins;
 }
