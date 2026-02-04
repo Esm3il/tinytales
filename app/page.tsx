@@ -14,7 +14,7 @@ export default function Home() {
         width={800} height={354} className="absolute opacity-5 rotate-270 object-cover translate-y-[-0.5rem]"/>
       </section>
       <ProductNav/>
-      <ProductDetails
+      <ProductDetails/>
     </main>
   );
 }
